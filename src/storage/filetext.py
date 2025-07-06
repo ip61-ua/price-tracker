@@ -2,9 +2,6 @@ from base_storage import Storage
 import io
 
 class FileText(Storage):
-    __f: io.FileIO
-    __namefile: str = ""
-
     def __init__ (self, namefile: str):
         self.__namefile = namefile
 
