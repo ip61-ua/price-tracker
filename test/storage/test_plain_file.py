@@ -18,7 +18,7 @@ class MyTestCase(unittest.TestCase):
             RegisterMetadata("Engine A", "a.com", 200, datetime(2017, 1, 1, 12, 30)))
 
     def tearDown(self):
-        pass
+        self.temp_dir.cleanup()
 
     def test_file_export(self):
         dst = path.join(self.temp_dir.name, "test1.txt")
@@ -30,6 +30,8 @@ class MyTestCase(unittest.TestCase):
         f1.close()
 
         self.assertEqual(self.r1.__str__(), s[0][:-1])
+
+
 
 
 if __name__ == '__main__':
