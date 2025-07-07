@@ -44,4 +44,3 @@ class Register:
         r5 = f"{self.product.description}"
 
         return r1 + r2 + r3 + r4 + r5
-

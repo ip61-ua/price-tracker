@@ -32,7 +32,5 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.r1.__str__(), s[0][:-1])
 
 
-
-
 if __name__ == '__main__':
     unittest.main()
