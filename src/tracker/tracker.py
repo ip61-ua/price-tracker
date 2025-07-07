@@ -30,7 +30,7 @@ class TrackerFactory:
         TrackerFactory.__memo[link] = engine
 
     @staticmethod
-    def __list_modules() -> list[str]:
+    def list_modules() -> list[str]:
         # el [:-3] quita el ".py" del final
         return [f[:-3] for f in os.listdir(TrackerFactory.__sites_folder) if f.endswith('.py') and f != "__init__.py"]
 
@@ -39,7 +39,8 @@ class TrackerFactory:
         if TrackerFactory.__is_cached(link):
             return TrackerFactory.__load(link)
 
-        for module_name in TrackerFactory.__list_modules():
+
+        for module_name in TrackerFactory.list_modules():
             module = importlib.import_module(f"sites.{module_name}")
 
             for attr_name in dir(module):
