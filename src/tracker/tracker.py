@@ -27,12 +27,15 @@ class Tracker(ABC):
 
 
 class TrackerFactory:
-    def __cache_save (link: str):
+    @staticmethod
+    def __cache_save (tracker: Tracker, link: str):
         pass
 
+    @staticmethod
     def __cache_load (link: str) -> (Tracker|None):
         pass
 
+    @staticmethod
     def get_engine_by_link (link: str) -> (Tracker|None):
         pass
 
